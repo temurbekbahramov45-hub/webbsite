@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="uz">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0f" />
+  <meta name="theme-color" content="#09090a" />
   <meta name="color-scheme" content="dark" />
   <title>Bahramov Temurbek — Frontend Developer</title>
   <meta name="description" content="Bahramov Temurbek — Frontend Developer crafting animated, interaction-heavy web experiences and AI interfaces." />
@@ -17,20 +17,20 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="%2309090a"/><circle cx="32" cy="32" r="22" fill="none" stroke="%238f79ff" stroke-width="2"/><text x="50%25" y="53%25" dominant-baseline="middle" text-anchor="middle" font-size="20" font-family="Arial" font-weight="900" fill="white">TB</text></svg>' />
   <style>
     :root{
-      --bg:#0b0b0f;--bg2:#13131a;--card:#181820;--text:#fffefa;--muted:#aaa7b3;--line:rgba(255,255,255,.14);
-      --violet:#a18cff;--violet2:#7058e8;--lime:#dcff74;--cyan:#6fe6ff;--danger:#ff7474;--r:28px;
+      --bg:#0b0b10;--bg2:#12121a;--card:#171722;--text:#fffefe;--muted:#aaa6b4;--line:rgba(255,255,255,.15);
+      --violet:#a78bff;--violet2:#7458ff;--lime:#dcff67;--cyan:#6be8ff;--danger:#ff7474;--r:28px;
       --mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;--sans:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       --px:50vw;--py:50vh;--scroll:0;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--bg)}
-    body{margin:0;background:radial-gradient(circle at 14% -8%,rgba(161,140,255,.10),transparent 28%),radial-gradient(circle at 92% 10%,rgba(111,230,255,.07),transparent 26%),var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
     body,a,button{cursor:none}
     a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
     ::selection{background:var(--lime);color:#0a0a0b}
     .noise{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.052;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E")}
     .progress{position:fixed;left:0;top:0;height:2px;width:100%;z-index:1200;background:linear-gradient(90deg,var(--lime),var(--violet),var(--cyan));transform:scaleX(var(--scroll));transform-origin:left;box-shadow:0 0 12px rgba(207,255,87,.35)}
-    .ambient{position:fixed;width:720px;height:720px;left:var(--px);top:var(--py);transform:translate(-50%,-50%);z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(161,140,255,.16) 0%,rgba(111,230,255,.055) 34%,transparent 68%);filter:blur(14px);transition:opacity .25s}
+    .ambient{position:fixed;width:720px;height:720px;left:var(--px);top:var(--py);transform:translate(-50%,-50%);z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(167,139,255,.18) 0%,rgba(107,232,255,.055) 38%,transparent 70%);filter:blur(14px);transition:opacity .25s}
     .grid-fixed{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.72) 35%,transparent 88%)}
 
     /* loader inspired by agency preloader grammar, fully original implementation */
@@ -40,7 +40,7 @@
     .loader-core{position:relative;width:190px;height:190px;display:grid;place-items:center}
     .loader-core:before,.loader-core:after{content:"";position:absolute;border-radius:50%;border:1px dashed rgba(143,121,255,.45);inset:0;animation:spin 7s linear infinite}
     .loader-core:after{inset:24px;border-style:solid;border-color:rgba(207,255,87,.18) transparent rgba(207,255,87,.45);animation-duration:3.7s;animation-direction:reverse}
-    .loader-logo{width:82px;height:82px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#9c8bff,#4a36c6);font-size:24px;font-weight:900;letter-spacing:-.08em;box-shadow:0 0 70px rgba(143,121,255,.3)}
+    .loader-logo{width:82px;height:82px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#9c8bff,#4a36c6);font-size:24px;font-weight:900;letter-spacing:-.08em;box-shadow:0 0 90px rgba(167,139,255,.48),0 0 120px rgba(107,232,255,.12)}
     .loader-meta{position:absolute;left:6vw;right:6vw;bottom:6vh;display:flex;align-items:center;gap:18px;font:400 8px var(--mono);letter-spacing:.10em;color:#69666f;text-transform:uppercase}
     .loader-bar{height:1px;flex:1;background:rgba(255,255,255,.08);position:relative;overflow:hidden}.loader-bar i{position:absolute;inset:0;background:linear-gradient(90deg,var(--violet),var(--lime));transform-origin:left;transform:scaleX(0);transition:transform .12s linear}.loader-count{min-width:40px;text-align:right;color:#aaa5b3}
 
@@ -52,16 +52,19 @@
     .cursor-dot.dim{opacity:.3;transform:scale(.45)}
 
     .shell{width:min(1480px,calc(100% - 64px));margin:auto;position:relative;z-index:2}
-    header{position:fixed;z-index:1100;left:50%;top:18px;transform:translateX(-50%);width:min(1460px,calc(100% - 38px));height:72px;padding:0 13px 0 14px;border:1px solid rgba(255,255,255,.10);border-radius:20px;background:rgba(13,13,18,.68);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;transition:.35s cubic-bezier(.16,1,.3,1)}
-    header.scrolled{top:10px;height:62px;background:rgba(13,13,18,.91);backdrop-filter:blur(28px) saturate(1.45);box-shadow:0 18px 60px rgba(0,0,0,.24)}
+    header{position:fixed;z-index:1100;left:50%;top:18px;transform:translateX(-50%);width:min(1460px,calc(100% - 38px));height:72px;padding:0 13px 0 14px;border:1px solid rgba(255,255,255,.10);border-radius:20px;background:rgba(13,13,19,.72);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;transition:.35s cubic-bezier(.16,1,.3,1)}
+    header.scrolled{top:10px;height:62px;background:rgba(13,13,19,.92);backdrop-filter:blur(26px) saturate(1.35);box-shadow:0 18px 60px rgba(0,0,0,.24)}
     .brand{display:flex;align-items:center;gap:12px}.brand-mark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#9685ff,#4b37ca);font-size:12px;font-weight:900;letter-spacing:-.04em;position:relative;overflow:hidden}.brand-mark:after{content:"";position:absolute;inset:-50%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transform:translateX(-80%) rotate(20deg);animation:shine 4s ease-in-out infinite 2s}.brand-text{display:grid}.brand-text b{font-size:11px;letter-spacing:.16em}.brand-text small{font:400 7px var(--mono);color:#696570;letter-spacing:.09em;margin-top:3px}
     nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:28px}nav a{font:500 9px var(--mono);letter-spacing:.10em;color:#98949f;position:relative;padding:12px 0;transition:.2s}nav a:after{content:"";position:absolute;left:0;right:100%;bottom:5px;height:1px;background:var(--lime);transition:.24s}nav a:hover{color:#fff}nav a:hover:after{right:0}
     .head-right{display:flex;align-items:center;gap:8px}.head-time{display:grid;text-align:right;margin-right:8px}.head-time b{font:500 10px var(--mono)}.head-time small{font:400 6px var(--mono);color:#66626c;letter-spacing:.08em}
-    .lang-switch{height:42px;padding:4px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.045);display:flex;align-items:center;gap:2px;box-shadow:inset 0 1px rgba(255,255,255,.04)}.lang-btn{height:32px;min-width:32px;padding:0 7px;border:0;border-radius:8px;background:transparent;color:#77737f;font:600 8px var(--mono);letter-spacing:.05em;transition:.25s cubic-bezier(.16,1,.3,1)}.lang-btn:hover{color:#fff;background:rgba(255,255,255,.06)}.lang-btn.active{color:#09090c;background:linear-gradient(135deg,var(--lime),#efffae);box-shadow:0 5px 18px rgba(220,255,116,.18);transform:translateY(-1px)}
-    .lang-change [data-i18n],.lang-change [data-i18n-html]{animation:langPop .38s cubic-bezier(.16,1,.3,1)}
     .icon-btn,.menu-btn{height:42px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.035);display:flex;align-items:center;gap:8px;padding:0 13px;font:500 8px var(--mono);letter-spacing:.07em;transition:.2s}.icon-btn:hover,.menu-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}.menu-btn{display:none;width:42px;padding:0;justify-content:center}
 
-    .hero{min-height:100svh;padding:155px 0 45px;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.hero:before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;right:-320px;top:-150px;background:radial-gradient(circle,rgba(161,140,255,.27),rgba(111,230,255,.06) 42%,transparent 70%);filter:blur(24px);animation:ambientPulse 5s ease-in-out infinite alternate}.hero:after{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:5vw;top:18vh;border:1px dashed rgba(220,255,116,.28);animation:spin 35s linear infinite}
+    .lang-switch{display:flex;align-items:center;gap:3px;padding:4px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(255,255,255,.045);box-shadow:inset 0 1px rgba(255,255,255,.04)}
+    .lang-switch button{height:32px;min-width:36px;padding:0 9px;border:0;border-radius:8px;background:transparent;color:#77727f;font:600 8px var(--mono);letter-spacing:.08em;transition:.22s cubic-bezier(.16,1,.3,1)}
+    .lang-switch button:hover{color:#fff;background:rgba(255,255,255,.07)}
+    .lang-switch button.active{color:#08080b;background:linear-gradient(135deg,var(--lime),#f6ffb0);box-shadow:0 7px 24px rgba(220,255,103,.2)}
+    .hero-accent-glow{position:absolute;pointer-events:none;width:520px;height:520px;left:-160px;bottom:-140px;border-radius:50%;background:radial-gradient(circle,rgba(107,232,255,.14),transparent 67%);filter:blur(20px)}
+    .hero{min-height:100svh;padding:155px 0 45px;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.hero:before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;right:-320px;top:-150px;background:radial-gradient(circle,rgba(167,139,255,.28),rgba(107,232,255,.06) 42%,transparent 70%);filter:blur(24px);animation:ambientPulse 5s ease-in-out infinite alternate}.hero:after{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:5vw;top:18vh;border:1px dashed rgba(207,255,87,.18);animation:spin 35s linear infinite}
     .hero-kicker{display:flex;align-items:center;gap:10px;font:500 9px var(--mono);letter-spacing:.13em;color:#8b8790;margin-bottom:clamp(26px,5vh,55px)}.status{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px rgba(207,255,87,.06),0 0 16px rgba(207,255,87,.65);animation:pulse 2s infinite}.hero-kicker em{font-style:normal;color:#4d4952}
     .hero-copy{position:relative;z-index:3}.micro{font:500 10px var(--mono);letter-spacing:.12em;color:#6f6b75;margin:0 0 14px 4px}.micro span{color:var(--violet)}.hero h1{font-size:clamp(76px,12.2vw,190px);line-height:.73;letter-spacing:-.086em;margin:0;font-weight:900;text-transform:uppercase}.hero h1 span{display:block;width:max-content;max-width:100%}.hero h1 .solid{background:linear-gradient(120deg,#fff 12%,#aaa7b0 58%,#fefefe 82%);-webkit-background-clip:text;color:transparent}.hero h1 .outline{margin-left:8vw;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55);position:relative}.hero h1 .outline:after{content:"BAHROMOV";position:absolute;inset:0;color:transparent;-webkit-text-stroke:1px rgba(143,121,255,.18);transform:translate(3px,3px)}
     .hero-bottom{display:grid;grid-template-columns:1.2fr .9fr .7fr;align-items:end;gap:44px;margin-top:clamp(42px,8vh,85px);position:relative;z-index:3}.hero-intro{display:flex;gap:20px}.hero-intro b{font:500 12px var(--mono);color:var(--violet)}.hero-intro p{margin:0;color:#8d8993;line-height:1.7;font-size:13px;max-width:560px}.hero-intro strong{color:#fff;font-weight:600}.hero-actions{display:flex;gap:10px}.cta{height:60px;min-width:240px;border-radius:15px;background:#f4f3ef;color:#09090a;display:flex;align-items:center;justify-content:space-between;padding:0 19px;font:600 9px var(--mono);letter-spacing:.07em;transition:background .2s,transform .18s}.cta:hover{background:var(--lime)}.round{width:60px;height:60px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.03);display:grid;place-items:center;transition:.25s}.round:hover{transform:translateY(-5px);background:rgba(143,121,255,.13);border-color:rgba(143,121,255,.4)}
@@ -97,15 +100,13 @@
     @keyframes ambientPulse{from{transform:scale(.94);opacity:.68}to{transform:scale(1.06);opacity:1}}@keyframes pulse{50%{opacity:.5;box-shadow:0 0 0 10px rgba(207,255,87,0)}}
     @keyframes ticker{to{transform:translateX(-50%)}}@keyframes scrollLine{to{top:90px}}@keyframes eq{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
     @keyframes scan{to{top:120%}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes corePulse{50%{box-shadow:0 0 100px rgba(143,121,255,.52)}}
-    @keyframes langPop{0%{opacity:.35;filter:blur(6px);transform:translateY(3px)}100%{opacity:1;filter:blur(0);transform:none}}
-    .skill-card,.project,.lab-box{box-shadow:inset 0 1px rgba(255,255,255,.045),0 24px 90px rgba(0,0,0,.18)}.skill-card:hover,.project:hover{border-color:rgba(161,140,255,.36);box-shadow:inset 0 1px rgba(255,255,255,.07),0 26px 90px rgba(112,88,232,.10)}.visual{background-color:#101017}.contact-inner:before{opacity:1.18}.about-orbit .glow{filter:blur(28px)}
 
     @media(max-width:1120px){
       .hero-bottom{grid-template-columns:1.2fr 1fr}.hero-stats{display:none}.project{width:70%;min-width:70%}.lab-box{grid-template-columns:1fr}.lab-copy{border-right:0;border-bottom:1px solid var(--line)}.constellation{min-height:650px}
       .skills-stage{grid-template-columns:1fr}.skill-card{min-height:380px}
     }
     @media(max-width:900px){
-      body,a,button{cursor:auto}.cursor-wrap,.ambient{display:none}.shell{width:calc(100% - 28px)}header{width:calc(100% - 24px);top:12px;height:62px}nav,.head-time,.icon-btn{display:none}.menu-btn{display:flex}.brand-text{display:none}.lang-switch{height:38px}.lang-btn{height:30px;min-width:29px;padding:0 6px;font-size:7px}
+      body,a,button{cursor:auto}.cursor-wrap,.ambient{display:none}.shell{width:calc(100% - 28px)}header{width:calc(100% - 24px);top:12px;height:62px}nav,.head-time,.icon-btn{display:none}.menu-btn{display:flex}.brand-text{display:none}.lang-switch{margin-left:auto}.lang-switch button{min-width:32px;padding:0 7px}
       .hero{min-height:980px;padding-top:120px;justify-content:flex-start}.hero:after{width:230px;height:230px;right:-40px;top:130px}.hero-kicker{margin-top:30px}.hero-copy{margin-top:140px}.hero h1{font-size:clamp(62px,16vw,105px);line-height:.76}.hero h1 .outline{margin-left:2vw}.hero-bottom{grid-template-columns:1fr;margin-top:55px}.hero-intro{max-width:650px}.hero-actions{width:100%}.cta{flex:1;min-width:0}.scroll-note{display:none}
       .section{padding:105px 0}.section-title{flex-direction:column;align-items:flex-start}.section-title h2{font-size:clamp(54px,12vw,92px)}.about-layout{grid-template-columns:1fr}.about-sticky{position:relative;top:0}.about-orbit{max-width:380px;margin-inline:auto}.about-list{padding-left:30px}.about-item .num{left:-41px}
       .project{width:84%;min-width:84%}.visual{height:330px}.lab-copy{padding:45px 30px}.contact{min-height:760px}.contact h2{font-size:clamp(58px,12vw,98px)}
@@ -132,25 +133,25 @@
   <div class="cursor-wrap" aria-hidden="true"><div class="cursor-dot"></div><div class="cursor-ring"><span>VIEW</span></div></div>
 
   <header id="header">
-    <a class="brand" href="#home" data-cursor="HOME"><div class="brand-mark">TB</div><div class="brand-text"><b>BAHROMOV</b><small data-i18n="brandSub">CREATIVE FRONTEND / 2026</small></div></a>
-    <nav><a href="#about" data-cursor="01" data-i18n="navAbout">ABOUT</a><a href="#skills" data-cursor="02" data-i18n="navStack">STACK</a><a href="#work" data-cursor="03" data-i18n="navWork">WORK</a><a href="#lab" data-cursor="04" data-i18n="navLab">LAB</a><a href="#contact" data-cursor="05" data-i18n="navContact">CONTACT</a></nav>
-    <div class="head-right"><div class="head-time"><b id="clock">--:--:--</b><small>TASHKENT / GMT+5</small></div><div class="lang-switch" role="group" aria-label="Language"><button class="lang-btn" type="button" data-lang="uz" data-cursor="UZ">UZ</button><button class="lang-btn" type="button" data-lang="ru" data-cursor="RU">RU</button><button class="lang-btn" type="button" data-lang="en" data-cursor="EN">EN</button></div><a class="icon-btn magnetic" href="https://github.com/temurbekbahramov45-hub" target="_blank" rel="noreferrer" data-cursor="GH">GITHUB ↗</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" data-cursor="MENU">☰</button></div>
+    <a class="brand" href="#home" data-cursor="HOME"><div class="brand-mark">TB</div><div class="brand-text"><b>BAHROMOV</b><small>CREATIVE FRONTEND / 2026</small></div></a>
+    <nav><a href="#about" data-cursor="01" data-i18n="nav.about">ABOUT</a><a href="#skills" data-cursor="02" data-i18n="nav.stack">STACK</a><a href="#work" data-cursor="03" data-i18n="nav.work">WORK</a><a href="#lab" data-cursor="04" data-i18n="nav.lab">LAB</a><a href="#contact" data-cursor="05" data-i18n="nav.contact">CONTACT</a></nav>
+    <div class="head-right"><div class="lang-switch" aria-label="Language"><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div><div class="head-time"><b id="clock">--:--:--</b><small>TASHKENT / GMT+5</small></div><a class="icon-btn magnetic" href="https://github.com/temurbekbahramov45-hub" target="_blank" rel="noreferrer" data-cursor="GH">GITHUB ↗</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" data-cursor="MENU">☰</button></div>
   </header>
-  <div class="mobile-panel" id="mobilePanel"><a href="#about"><span>01</span><b data-i18n="navAbout">About</b></a><a href="#skills"><span>02</span><b data-i18n="navStack">Stack</b></a><a href="#work"><span>03</span><b data-i18n="navWork">Work</b></a><a href="#lab"><span>04</span><b data-i18n="navLab">Lab</b></a><a href="#contact"><span>05</span><b data-i18n="navContact">Contact</b></a></div>
+  <div class="mobile-panel" id="mobilePanel"><a href="#about"><span>01</span>About</a><a href="#skills"><span>02</span>Stack</a><a href="#work"><span>03</span>Work</a><a href="#lab"><span>04</span>Lab</a><a href="#contact"><span>05</span>Contact</a></div>
 
   <main>
-    <section class="hero shell" id="home">
-      <div class="hero-kicker reveal"><i class="status"></i><span data-i18n="heroKicker">AVAILABLE FOR AMBITIOUS BUILDS</span> <em>/</em> FRONTEND × MOTION × AI</div>
+    <section class="hero shell" id="home"><div class="hero-accent-glow" aria-hidden="true"></div>
+      <div class="hero-kicker reveal"><i class="status"></i> <span data-i18n="hero.available">AVAILABLE FOR AMBITIOUS BUILDS</span> <em>/</em> FRONTEND × MOTION × AI</div>
       <div class="hero-copy reveal">
-        <p class="micro"><span data-i18n="heroRole">FRONTEND DEVELOPER</span> <span>/</span> <span data-i18n="heroRole2">INTERACTION BUILDER</span></p>
+        <p class="micro"><span data-i18n="hero.role">FRONTEND DEVELOPER</span> <span>/</span> <span data-i18n="hero.interaction">INTERACTION BUILDER</span></p>
         <h1><span class="solid">TEMURBEK</span><span class="outline">BAHROMOV</span></h1>
       </div>
       <div class="hero-bottom reveal">
-        <div class="hero-intro"><b>///</b><p data-i18n-html="heroIntro">I build interfaces that feel <strong>alive</strong> — motion-rich, responsive and engineered with obsessive attention to interaction, rhythm and detail.</p></div>
-        <div class="hero-actions"><a class="cta magnetic" href="#work" data-cursor="GO"><span data-i18n="heroCta">EXPLORE SELECTED WORK</span><b>↘</b></a><a class="round" href="https://t.me/devalapir" target="_blank" rel="noreferrer" data-cursor="TG">↗</a></div>
-        <div class="hero-stats"><div><b id="repoCount">20+</b><span data-i18n="publicRepos">PUBLIC REPOSITORIES</span></div><div><b>01</b><span data-i18n="corePhilosophy">CORE PHILOSOPHY: DETAIL</span></div></div>
+        <div class="hero-intro"><b>///</b><p><span data-i18n-html="hero.intro">I build interfaces that feel <strong>alive</strong> — motion-rich, responsive and engineered with obsessive attention to interaction, rhythm and detail.</span></p></div>
+        <div class="hero-actions"><a class="cta magnetic" href="#work" data-cursor="GO"><span data-i18n="hero.cta">EXPLORE SELECTED WORK</span><b>↘</b></a><a class="round" href="https://t.me/devalapir" target="_blank" rel="noreferrer" data-cursor="TG">↗</a></div>
+        <div class="hero-stats"><div><b id="repoCount">20+</b><span><span data-i18n="hero.repos">PUBLIC REPOSITORIES</span></span></div><div><b>01</b><span><span data-i18n="hero.philosophy">CORE PHILOSOPHY: DETAIL</span></span></div></div>
       </div>
-      <div class="scroll-note"><span data-i18n="scrollDiscover">SCROLL TO DISCOVER</span><i></i></div>
+      <div class="scroll-note"><span><span data-i18n="hero.scroll">SCROLL TO DISCOVER</span></span><i></i></div>
     </section>
 
     <section class="ticker" aria-hidden="true"><div class="ticker-row" id="tickerRow">
@@ -159,53 +160,53 @@
     </div></section>
 
     <section class="section shell" id="about">
-      <div class="section-head reveal"><span data-i18n="aboutHead">01 / IDENTITY</span><span data-i18n="aboutHead2">NOT ANOTHER DEFAULT PORTFOLIO</span></div>
+      <div class="section-head reveal"><span><span data-i18n="about.kicker">01 / IDENTITY</span></span><span><span data-i18n="about.side">NOT ANOTHER DEFAULT PORTFOLIO</span></span></div>
       <div class="about-layout">
         <div class="about-sticky reveal-left">
-          <div class="section-title" style="display:block;margin-bottom:0"><h2><span class="split-line"><span data-i18n="aboutTitle1">DESIGNING</span></span><span class="split-line"><span><em data-i18n="aboutTitle2">BEYOND</em></span></span><span class="split-line"><span data-i18n="aboutTitle3">DEFAULT.</span></span></h2></div>
-          <div class="about-orbit" data-cursor="EXPLORE"><div class="glow"></div><div class="orbit-ring"></div><div class="orbit-ring r2"></div><div class="orbit-ring r3"></div><div class="core"><span data-i18n="developer">DEVELOPER</span><b>TB</b><span data-i18n="online">ONLINE</span></div><div class="pod p1">MOTION</div><div class="pod p2">CODE</div><div class="pod p3">AI</div><div class="pod p4">UI</div></div>
+          <div class="section-title" style="display:block;margin-bottom:0"><h2><span class="split-line"><span>DESIGNING</span></span><span class="split-line"><span><em>BEYOND</em></span></span><span class="split-line"><span>DEFAULT.</span></span></h2></div>
+          <div class="about-orbit" data-cursor="EXPLORE"><div class="glow"></div><div class="orbit-ring"></div><div class="orbit-ring r2"></div><div class="orbit-ring r3"></div><div class="core"><span>DEVELOPER</span><b>TB</b><span>ONLINE</span></div><div class="pod p1">MOTION</div><div class="pod p2">CODE</div><div class="pod p3">AI</div><div class="pod p4">UI</div></div>
         </div>
         <div class="about-list">
-          <article class="about-item reveal"><span class="num">01</span><h3 data-i18n="aboutItem1Title">Motion with purpose.</h3><p data-i18n="aboutItem1Text">Animations are not filler. They establish hierarchy, explain state changes, direct attention and make the interface feel physical without sacrificing clarity.</p><span class="tag">SCROLL / HOVER / TRANSITION</span></article>
-          <article class="about-item reveal"><span class="num">02</span><h3 data-i18n="aboutItem2Title">Details are the product.</h3><p data-i18n="aboutItem2Text">Cursor physics, button magnetism, timing curves, spacing, type rhythm and micro-feedback are treated as real engineering decisions — not decoration after the build.</p><span class="tag">MICRO-INTERACTION / POLISH</span></article>
-          <article class="about-item reveal"><span class="num">03</span><h3 data-i18n="aboutItem3Title">Experimental, but usable.</h3><p data-i18n="aboutItem3Text">I like ambitious interfaces, AI products and unusual interactions, but responsive behavior, accessibility and fallback states still come first.</p><span class="tag">PERFORMANCE / ACCESSIBILITY</span></article>
+          <article class="about-item reveal"><span class="num">01</span><h3><span data-i18n="about.a1.title">Motion with purpose.</span></h3><p><span data-i18n="about.a1.body">Animations are not filler. They establish hierarchy, explain state changes, direct attention and make the interface feel physical without sacrificing clarity.</span></p><span class="tag">SCROLL / HOVER / TRANSITION</span></article>
+          <article class="about-item reveal"><span class="num">02</span><h3><span data-i18n="about.a2.title">Details are the product.</span></h3><p><span data-i18n="about.a2.body">Cursor physics, button magnetism, timing curves, spacing, type rhythm and micro-feedback are treated as real engineering decisions — not decoration after the build.</span></p><span class="tag">MICRO-INTERACTION / POLISH</span></article>
+          <article class="about-item reveal"><span class="num">03</span><h3><span data-i18n="about.a3.title">Experimental, but usable.</span></h3><p><span data-i18n="about.a3.body">I like ambitious interfaces, AI products and unusual interactions, but responsive behavior, accessibility and fallback states still come first.</span></p><span class="tag">PERFORMANCE / ACCESSIBILITY</span></article>
         </div>
       </div>
     </section>
 
     <section class="section shell" id="skills">
-      <div class="section-head reveal"><span data-i18n="skillsHead">02 / TOOLKIT</span><span data-i18n="skillsHead2">THE SYSTEM BEHIND THE SURFACE</span></div>
-      <div class="section-title reveal"><h2><span data-i18n="stackWord">STACK</span> /<br><em data-i18n="capabilitiesWord">CAPABILITIES</em></h2><p data-i18n="skillsIntro">Modern frontend primitives, animation systems and rapid product iteration — used to ship interactive experiences instead of static mockups.</p></div>
+      <div class="section-head reveal"><span><span data-i18n="skills.kicker">02 / TOOLKIT</span></span><span><span data-i18n="skills.side">THE SYSTEM BEHIND THE SURFACE</span></span></div>
+      <div class="section-title reveal"><h2>STACK /<br><em>CAPABILITIES</em></h2><p><span data-i18n="skills.body">Modern frontend primitives, animation systems and rapid product iteration — used to ship interactive experiences instead of static mockups.</span></p></div>
       <div class="skills-stage">
         <article class="skill-card reveal" data-cursor="CODE"><div class="skill-top"><span>⌘</span> CORE_FRONTEND.TSX <b>01</b></div><div class="code-window"><span><span class="kw">const</span> craft = <span class="sym">{</span></span><span>&nbsp;&nbsp;framework: <span class="str">'React'</span>,</span><span>&nbsp;&nbsp;language: <span class="str">'TypeScript'</span>,</span><span>&nbsp;&nbsp;layout: <span class="str">'Responsive CSS'</span>,</span><span>&nbsp;&nbsp;motion: [<span class="str">'CSS'</span>, <span class="str">'JS'</span>],</span><span>&nbsp;&nbsp;mindset: <span class="str">'ship → test → refine'</span></span><span><span class="sym">}</span>;</span></div></article>
-        <article class="skill-card reveal" data-cursor="SPIN"><div class="skill-top"><span>◉</span> TECH_ORBIT <b>02</b></div><div class="skill-big">MODERN<br><em>FRONTEND</em></div><p data-i18n="skillTechText">React, TypeScript, Vite, CSS, Git and API-driven interfaces tied together with deliberate motion.</p><div class="skill-orbit"><i>REACT</i><i>TS</i><i>CSS</i><i>GIT</i></div></article>
-        <article class="skill-card reveal" data-cursor="MOVE"><div class="skill-top"><span>≋</span> MOTION_ENGINE <b>03</b></div><div class="wave">${Array.from({length:24}).map(()=>'<i></i>').join('')}</div><div class="skill-big" style="margin-top:15px">60 FPS<br><em>MINDSET</em></div><p data-i18n="skillMotionText">Transform-first motion, progressive enhancement and reduced-motion fallbacks.</p></article>
-        <article class="skill-card reveal" data-cursor="DRAG"><div class="skill-top"><span>◇</span> INTERACTION_LAB <b>04</b></div><div class="skill-big">TOUCH /<br><em>RESPONSE</em></div><p data-i18n="skillInteractionText">Drag the chip. Every surface should acknowledge the user, not just sit there.</p><div class="mini-ui"><div class="drag-chip" id="dragChip" data-i18n="dragMe">DRAG ME ↔</div></div></article>
+        <article class="skill-card reveal" data-cursor="SPIN"><div class="skill-top"><span>◉</span> TECH_ORBIT <b>02</b></div><div class="skill-big">MODERN<br><em>FRONTEND</em></div><p>React, TypeScript, Vite, CSS, Git and API-driven interfaces tied together with deliberate motion.</p><div class="skill-orbit"><i>REACT</i><i>TS</i><i>CSS</i><i>GIT</i></div></article>
+        <article class="skill-card reveal" data-cursor="MOVE"><div class="skill-top"><span>≋</span> MOTION_ENGINE <b>03</b></div><div class="wave">${Array.from({length:24}).map(()=>'<i></i>').join('')}</div><div class="skill-big" style="margin-top:15px">60 FPS<br><em>MINDSET</em></div><p>Transform-first motion, progressive enhancement and reduced-motion fallbacks.</p></article>
+        <article class="skill-card reveal" data-cursor="DRAG"><div class="skill-top"><span>◇</span> INTERACTION_LAB <b>04</b></div><div class="skill-big">TOUCH /<br><em>RESPONSE</em></div><p>Drag the chip. Every surface should acknowledge the user, not just sit there.</p><div class="mini-ui"><div class="drag-chip" id="dragChip">DRAG ME ↔</div></div></article>
       </div>
     </section>
 
     <section class="section shell work" id="work">
-      <div class="section-head reveal"><span data-i18n="workHead">03 / SELECTED BUILDS</span><span data-i18n="workHead2">REAL REPOSITORIES / LIVE GITHUB</span></div>
-      <div class="section-title reveal"><h2><span data-i18n="realCode">REAL CODE.</span><br><em data-i18n="realBuilds">REAL BUILDS.</em></h2><p data-i18n="workIntro">The portfolio loads public repositories from GitHub and keeps curated fallbacks so the work section never turns into an empty template.</p></div>
+      <div class="section-head reveal"><span><span data-i18n="work.kicker">03 / SELECTED BUILDS</span></span><span><span data-i18n="work.side">REAL REPOSITORIES / LIVE GITHUB</span></span></div>
+      <div class="section-title reveal"><h2>REAL CODE.<br><em>REAL BUILDS.</em></h2><p><span data-i18n="work.body">The portfolio loads public repositories from GitHub and keeps curated fallbacks so the work section never turns into an empty template.</span></p></div>
       <div class="work-strip" id="workStrip"></div>
       <div class="work-nav"><button id="prevWork" aria-label="Previous projects" data-cursor="BACK">←</button><button id="nextWork" aria-label="Next projects" data-cursor="NEXT">→</button></div>
     </section>
 
     <section class="section shell" id="lab">
-      <div class="section-head reveal"><span data-i18n="labHead">04 / EXPERIMENT</span><span data-i18n="labHead2">AGENT COMMAND SPACE</span></div>
+      <div class="section-head reveal"><span><span data-i18n="lab.kicker">04 / EXPERIMENT</span></span><span><span data-i18n="lab.side">AGENT COMMAND SPACE</span></span></div>
       <div class="lab-box reveal">
-        <div class="lab-copy"><span class="eyetag" data-i18n="labTag">✦ INTERACTIVE SYSTEM</span><h2>AGENT<br><em>COMMAND</em><br>SPACE</h2><p data-i18n="labIntro">A visual metaphor for the systems I like building: one core, multiple specialized tools, visible status and strong feedback loops.</p><div class="chips"><span>UI ORCHESTRATION</span><span>AGENT THINKING</span><span>TOOL ROUTING</span><span>LIVE STATUS</span></div></div>
+        <div class="lab-copy"><span class="eyetag">✦ INTERACTIVE SYSTEM</span><h2>AGENT<br><em>COMMAND</em><br>SPACE</h2><p><span data-i18n="lab.body">A visual metaphor for the systems I like building: one core, multiple specialized tools, visible status and strong feedback loops.</span></p><div class="chips"><span>UI ORCHESTRATION</span><span>AGENT THINKING</span><span>TOOL ROUTING</span><span>LIVE STATUS</span></div></div>
         <div class="constellation" data-cursor="EXPLORE"><div class="agent-ring"></div><div class="agent-ring r2"></div><div class="agent-core"><span>CORE</span><b>TB</b><small>ONLINE</small></div><div class="node n1"><i></i><b>VISION</b><small>18%</small></div><div class="node n2"><i></i><b>CODE</b><small>72%</small></div><div class="node n3"><i></i><b>RESEARCH</b><small>44%</small></div><div class="node n4"><i></i><b>DESIGN</b><small>91%</small></div><div class="node n5"><i></i><b>TOOLS</b><small>63%</small></div></div>
       </div>
     </section>
 
     <section class="section shell contact" id="contact">
-      <div class="section-head reveal"><span data-i18n="contactHead">05 / CONTACT</span><span data-i18n="contactHead2">LET'S BUILD SOMETHING THAT MOVES</span></div>
-      <div class="contact-inner reveal"><span data-i18n="haveIdea">HAVE AN IDEA?</span><h2><span data-i18n="contactTitle1">LET'S MAKE IT</span><br><em data-i18n="contactTitle2">IMPOSSIBLE TO IGNORE.</em></h2><div class="contact-actions"><a class="contact-main magnetic" href="https://t.me/devalapir" target="_blank" rel="noreferrer" data-cursor="CHAT"><span data-i18n="telegramCta">MESSAGE ON TELEGRAM</span><b>↗</b></a><a class="contact-icon" href="https://instagram.com/temurbekbahramov1" target="_blank" rel="noreferrer" data-cursor="IG">IG</a><a class="contact-icon" href="https://github.com/temurbekbahramov45-hub" target="_blank" rel="noreferrer" data-cursor="GH">GH</a></div></div><div class="bigword">BAHROMOV</div>
+      <div class="section-head reveal"><span><span data-i18n="contact.kicker">05 / CONTACT</span></span><span><span data-i18n="contact.side">LET'S BUILD SOMETHING THAT MOVES</span></span></div>
+      <div class="contact-inner reveal"><span><span data-i18n="contact.question">HAVE AN IDEA?</span></span><h2><span data-i18n-html="contact.title">LET'S MAKE IT<br><em>IMPOSSIBLE TO IGNORE.</em></span></h2><div class="contact-actions"><a class="contact-main magnetic" href="https://t.me/devalapir" target="_blank" rel="noreferrer" data-cursor="CHAT"><span data-i18n="contact.telegram">MESSAGE ON TELEGRAM</span><b>↗</b></a><a class="contact-icon" href="https://instagram.com/temurbekbahramov1" target="_blank" rel="noreferrer" data-cursor="IG">IG</a><a class="contact-icon" href="https://github.com/temurbekbahramov45-hub" target="_blank" rel="noreferrer" data-cursor="GH">GH</a></div></div><div class="bigword">BAHROMOV</div>
     </section>
   </main>
 
-  <footer class="shell"><span>© 2026 BAHROMOV TEMURBEK</span><span data-i18n="footerFocus">FRONTEND / MOTION / INTERACTION</span><a href="#home" data-i18n="backTop">BACK TO TOP ↑</a></footer>
+  <footer class="shell"><span>© 2026 BAHROMOV TEMURBEK</span><span>FRONTEND / MOTION / INTERACTION</span><a href="#home"><span data-i18n="footer.top">BACK TO TOP ↑</span></a></footer>
 
   <script>
     (()=>{
@@ -213,50 +214,46 @@
       const GITHUB='temurbekbahramov45-hub';
       const I18N={
         uz:{
-          metaTitle:'Bahramov Temurbek — Frontend dasturchi',metaDescription:'Bahramov Temurbek — animatsiya, interaktivlik va AI interfeyslariga e’tibor beradigan frontend dasturchi.',
-          brandSub:'KREATIV FRONTEND / 2026',navAbout:'HAQIMDA',navStack:'STACK',navWork:'LOYIHALAR',navLab:'LAB',navContact:'ALOQA',
-          heroKicker:'KATTA G‘OYALAR UCHUN OCHIQ',heroRole:'FRONTEND DASTURCHI',heroRole2:'INTERAKTIV INTERFEYSLAR',heroIntro:'Men <strong>tirikdek seziladigan</strong> interfeyslar yarataman — boy animatsiyalar, responsiv tuzilma va interaction, ritm hamda detallarga juda katta e’tibor bilan.',heroCta:'TANLANGAN LOYIHALARNI KO‘RISH',publicRepos:'OCHIQ REPOZITORIYLAR',corePhilosophy:'ASOSIY FALSAFA: DETALLAR',scrollDiscover:'PASTGA TUSHIB KASHF ETING',
-          aboutHead:'01 / MEN HAQIMDA',aboutHead2:'ODDIY PORTFOLIO EMAS',aboutTitle1:'DIZAYN',aboutTitle2:'DEFAULTDAN',aboutTitle3:'YUQORI.',developer:'DASTURCHI',online:'ONLAYN',
-          aboutItem1Title:'Maqsadli animatsiya.',aboutItem1Text:'Animatsiya shunchaki bezak emas. U ierarxiyani ko‘rsatadi, holat o‘zgarishini tushuntiradi, e’tiborni boshqaradi va interfeysni aniqlikni yo‘qotmasdan jismoniydek his qildiradi.',
-          aboutItem2Title:'Detallar — mahsulotning o‘zi.',aboutItem2Text:'Cursor fizikasi, magnetic tugmalar, easing, spacing, shrift ritmi va mikro-feedback — bular bezak emas, haqiqiy engineering qarorlari.',
-          aboutItem3Title:'Eksperimental, ammo qulay.',aboutItem3Text:'Murakkab interfeyslar, AI mahsulotlar va noodatiy interactionlar yoqadi, lekin responsivlik, accessibility va fallback holatlar doimo birinchi o‘rinda.',
-          skillsHead:'02 / ASBOBLAR',skillsHead2:'SIRT ORTIDAGI TIZIM',stackWord:'STACK',capabilitiesWord:'IMKONIYATLAR',skillsIntro:'Zamonaviy frontend asoslari, animatsiya tizimlari va tez product iteration — statik maket emas, real interaktiv tajriba chiqarish uchun.',
-          skillTechText:'React, TypeScript, Vite, CSS, Git va API asosidagi interfeyslar — hammasi maqsadli motion bilan bog‘langan.',skillMotionText:'Transform-first animatsiya, progressive enhancement va reduced-motion fallbacklar.',skillInteractionText:'Chipni sudrab ko‘ring. Har bir sirt foydalanuvchiga javob qaytarishi kerak — shunchaki jim turmasligi kerak.',dragMe:'SUDRANG ↔',
-          workHead:'03 / TANLANGAN LOYIHALAR',workHead2:'HAQIQIY REPOZITORIYLAR / LIVE GITHUB',realCode:'HAQIQIY KOD.',realBuilds:'HAQIQIY LOYIHALAR.',workIntro:'Portfolio GitHub’dagi public repolarni jonli yuklaydi va ishlar bo‘limi hech qachon bo‘sh template bo‘lib qolmasligi uchun tanlangan fallback loyihalarni saqlaydi.',projectGeneric:'Temurbekning GitHub workspace’idan public loyiha.',
-          labHead:'04 / TAJRIBA',labHead2:'AGENT COMMAND SPACE',labTag:'✦ INTERAKTIV TIZIM',labIntro:'Men qurishni yoqtiradigan tizimlar uchun vizual metafora: bitta yadro, bir nechta maxsus tool, ko‘rinadigan status va kuchli feedback looplar.',
-          contactHead:'05 / ALOQA',contactHead2:'HARAKATLANADIGAN NARSA YARATAMIZ',haveIdea:'G‘OYANGIZ BORMI?',contactTitle1:'UNI SHUNDAY QILAMIZKI,',contactTitle2:'E’TIBORSIZ QOLDIRIB BO‘LMAYDI.',telegramCta:'TELEGRAMDA YOZISH',footerFocus:'FRONTEND / MOTION / INTERACTION',backTop:'TEPAGA QAYTISH ↑'
+          'nav.about':'MEN HAQIMDA','nav.stack':'TEXNOLOGIYA','nav.work':'LOYIHALAR','nav.lab':'LAB','nav.contact':'ALOQA',
+          'hero.available':'YANGI VA AMBITSIYALI LOYIHALAR UCHUN OCHIQ','hero.role':'FRONTEND DASTURCHI','hero.interaction':'INTERAKTIV INTERFEYS YARATUVCHI',
+          'hero.intro':'Men <strong>jonli</strong> tuyuladigan interfeyslar yarataman — kuchli animatsiya, responsivlik va har bir mikro-detalga sinchkov e’tibor bilan.',
+          'hero.cta':'TANLANGAN LOYIHALARNI KO‘RISH','hero.repos':'PUBLIC REPOZITORIYLAR','hero.philosophy':'ASOSIY TAMOYIL: DETAL','hero.scroll':'PASTGA TUSHING',
+          'about.kicker':'01 / MEN HAQIMDA','about.side':'ODDIY DEFAULT PORTFOLIO EMAS',
+          'about.a1.title':'Maqsadli animatsiya.','about.a1.body':'Animatsiya shunchaki bezak emas. U ierarxiyani ko‘rsatadi, holat o‘zgarishini tushuntiradi, diqqatni boshqaradi va interfeysga fizik hissiyot beradi.',
+          'about.a2.title':'Detallar — mahsulotning o‘zi.','about.a2.body':'Cursor fizikasi, magnetic tugmalar, timing, spacing, tipografiya ritmi va mikro-feedback haqiqiy engineering qarorlari sifatida ishlanadi.',
+          'about.a3.title':'Eksperimental, lekin qulay.','about.a3.body':'Murakkab interfeyslar, AI mahsulotlar va noodatiy interactionlarni yoqtiraman, lekin responsivlik, accessibility va fallback holatlar doimo birinchi o‘rinda.',
+          'skills.kicker':'02 / TEXNOLOGIYALAR','skills.side':'TASHQI KO‘RINISH ORTIDAGI TIZIM','skills.body':'Zamonaviy frontend, animatsiya tizimlari va tez product iteration — statik mockup emas, ishlaydigan interaktiv tajriba uchun.',
+          'work.kicker':'03 / TANLANGAN LOYIHALAR','work.side':'REAL REPOZITORIYLAR / LIVE GITHUB','work.body':'Portfolio GitHub’dagi public repolarni jonli yuklaydi va API ishlamasa ham curated fallbacklar orqali bo‘sh qolmaydi.',
+          'lab.kicker':'04 / TAJRIBA','lab.side':'AGENT BOSHQARUV MAKONI','lab.body':'Men qurishni yoqtiradigan tizimlar uchun vizual metafora: bitta yadro, bir nechta maxsus tool, ko‘rinadigan status va kuchli feedback looplar.',
+          'contact.kicker':'05 / ALOQA','contact.side':'BIRGA HARAKATLANADIGAN NARSA QURAMIZ','contact.question':'G‘OYA BORMI?','contact.title':'UNI <br><em>E’TIBORSIZ QOLDIRIB BO‘LMAYDIGAN</em> DARAJAGA OLIB CHIQAMIZ.','contact.telegram':'TELEGRAMDA YOZING','footer.top':'TEPAGA QAYTISH ↑'
         },
         ru:{
-          metaTitle:'Bahramov Temurbek — Frontend-разработчик',metaDescription:'Bahramov Temurbek — frontend-разработчик, создающий анимированные интерфейсы, интерактивные продукты и AI-интерфейсы.',
-          brandSub:'КРЕАТИВНЫЙ FRONTEND / 2026',navAbout:'ОБО МНЕ',navStack:'СТЕК',navWork:'ПРОЕКТЫ',navLab:'LAB',navContact:'КОНТАКТ',
-          heroKicker:'ОТКРЫТ ДЛЯ АМБИЦИОЗНЫХ ПРОЕКТОВ',heroRole:'FRONTEND-РАЗРАБОТЧИК',heroRole2:'ИНТЕРАКТИВНЫЕ ИНТЕРФЕЙСЫ',heroIntro:'Я создаю интерфейсы, которые ощущаются <strong>живыми</strong> — насыщенными движением, адаптивными и тщательно проработанными в каждой интеракции, ритме и детали.',heroCta:'СМОТРЕТЬ ИЗБРАННЫЕ ПРОЕКТЫ',publicRepos:'ПУБЛИЧНЫЕ РЕПОЗИТОРИИ',corePhilosophy:'ГЛАВНЫЙ ПРИНЦИП: ДЕТАЛИ',scrollDiscover:'ЛИСТАЙТЕ, ЧТОБЫ ИССЛЕДОВАТЬ',
-          aboutHead:'01 / ОБО МНЕ',aboutHead2:'НЕ ЕЩЁ ОДНО ШАБЛОННОЕ ПОРТФОЛИО',aboutTitle1:'ДИЗАЙН',aboutTitle2:'ВЫШЕ',aboutTitle3:'ШАБЛОНА.',developer:'РАЗРАБОТЧИК',online:'В СЕТИ',
-          aboutItem1Title:'Движение с целью.',aboutItem1Text:'Анимация — не наполнитель. Она выстраивает иерархию, объясняет смену состояний, направляет внимание и делает интерфейс физически ощутимым без потери ясности.',
-          aboutItem2Title:'Детали — это продукт.',aboutItem2Text:'Физика курсора, магнитные кнопки, кривые времени, отступы, ритм типографики и микроотклик — инженерные решения, а не декор после разработки.',
-          aboutItem3Title:'Экспериментально, но удобно.',aboutItem3Text:'Мне нравятся смелые интерфейсы, AI-продукты и необычные взаимодействия, но адаптивность, доступность и надёжные fallback-состояния всегда остаются в приоритете.',
-          skillsHead:'02 / ИНСТРУМЕНТЫ',skillsHead2:'СИСТЕМА ЗА ПОВЕРХНОСТЬЮ',stackWord:'СТЕК',capabilitiesWord:'ВОЗМОЖНОСТИ',skillsIntro:'Современный frontend, системы анимации и быстрые продуктовые итерации — чтобы выпускать интерактивный опыт, а не статичные макеты.',
-          skillTechText:'React, TypeScript, Vite, CSS, Git и интерфейсы на API, связанные продуманной анимацией.',skillMotionText:'Transform-first анимация, progressive enhancement и fallback для reduced-motion.',skillInteractionText:'Перетащите элемент. Каждая поверхность должна отвечать пользователю, а не просто находиться на экране.',dragMe:'ПЕРЕТАЩИ ↔',
-          workHead:'03 / ИЗБРАННЫЕ ПРОЕКТЫ',workHead2:'РЕАЛЬНЫЕ РЕПОЗИТОРИИ / LIVE GITHUB',realCode:'РЕАЛЬНЫЙ КОД.',realBuilds:'РЕАЛЬНЫЕ ПРОЕКТЫ.',workIntro:'Портфолио загружает публичные репозитории прямо с GitHub и хранит отобранные fallback-проекты, чтобы раздел работ никогда не превращался в пустой шаблон.',projectGeneric:'Публичный проект из GitHub-пространства Temurbek.',
-          labHead:'04 / ЭКСПЕРИМЕНТ',labHead2:'AGENT COMMAND SPACE',labTag:'✦ ИНТЕРАКТИВНАЯ СИСТЕМА',labIntro:'Визуальная метафора систем, которые мне нравится создавать: одно ядро, несколько специализированных инструментов, видимый статус и сильные циклы обратной связи.',
-          contactHead:'05 / КОНТАКТ',contactHead2:'СОЗДАДИМ ЧТО-ТО, ЧТО ДВИЖЕТСЯ',haveIdea:'ЕСТЬ ИДЕЯ?',contactTitle1:'СДЕЛАЕМ ЕЁ',contactTitle2:'НЕВОЗМОЖНОЙ ДЛЯ ИГНОРА.',telegramCta:'НАПИСАТЬ В TELEGRAM',footerFocus:'FRONTEND / MOTION / INTERACTION',backTop:'НАВЕРХ ↑'
+          'nav.about':'ОБО МНЕ','nav.stack':'СТЕК','nav.work':'РАБОТЫ','nav.lab':'LAB','nav.contact':'КОНТАКТЫ',
+          'hero.available':'ОТКРЫТ ДЛЯ АМБИЦИОЗНЫХ ПРОЕКТОВ','hero.role':'FRONTEND-РАЗРАБОТЧИК','hero.interaction':'РАЗРАБОТЧИК ИНТЕРАКТИВНЫХ ИНТЕРФЕЙСОВ',
+          'hero.intro':'Я создаю интерфейсы, которые ощущаются <strong>живыми</strong> — с выразительной анимацией, адаптивностью и вниманием к каждому микро-взаимодействию.',
+          'hero.cta':'СМОТРЕТЬ ИЗБРАННЫЕ РАБОТЫ','hero.repos':'ПУБЛИЧНЫЕ РЕПОЗИТОРИИ','hero.philosophy':'ГЛАВНЫЙ ПРИНЦИП: ДЕТАЛИ','hero.scroll':'ЛИСТАЙТЕ НИЖЕ',
+          'about.kicker':'01 / ОБО МНЕ','about.side':'НЕ ЕЩЁ ОДНО ШАБЛОННОЕ ПОРТФОЛИО','about.a1.title':'Анимация со смыслом.','about.a1.body':'Анимация не является декором. Она задаёт иерархию, объясняет изменения состояния, направляет внимание и делает интерфейс физически ощутимым.',
+          'about.a2.title':'Детали — это продукт.','about.a2.body':'Физика курсора, магнитные кнопки, тайминг, интервалы, ритм типографики и микро-отклик рассматриваются как инженерные решения.',
+          'about.a3.title':'Экспериментально, но удобно.','about.a3.body':'Мне нравятся смелые интерфейсы, AI-продукты и необычные взаимодействия, но адаптивность, доступность и fallback-состояния всегда остаются основой.',
+          'skills.kicker':'02 / ИНСТРУМЕНТЫ','skills.side':'СИСТЕМА ПОД ПОВЕРХНОСТЬЮ','skills.body':'Современный frontend, системы анимации и быстрая продуктовая итерация — для интерактивных продуктов, а не статичных макетов.',
+          'work.kicker':'03 / ИЗБРАННЫЕ РАБОТЫ','work.side':'РЕАЛЬНЫЕ РЕПОЗИТОРИИ / LIVE GITHUB','work.body':'Портфолио загружает публичные репозитории GitHub и использует резервные проекты, чтобы раздел никогда не выглядел пустым шаблоном.',
+          'lab.kicker':'04 / ЭКСПЕРИМЕНТ','lab.side':'ПРОСТРАНСТВО УПРАВЛЕНИЯ АГЕНТАМИ','lab.body':'Визуальная метафора систем, которые мне нравится создавать: одно ядро, несколько специализированных инструментов, видимый статус и сильная обратная связь.',
+          'contact.kicker':'05 / КОНТАКТЫ','contact.side':'СОЗДАДИМ ЧТО-ТО ЖИВОЕ','contact.question':'ЕСТЬ ИДЕЯ?','contact.title':'СДЕЛАЕМ ЕЁ<br><em>НЕВОЗМОЖНО ИГНОРИРОВАТЬ.</em>','contact.telegram':'НАПИСАТЬ В TELEGRAM','footer.top':'НАВЕРХ ↑'
         },
         en:{
-          metaTitle:'Bahramov Temurbek — Frontend Developer',metaDescription:'Bahramov Temurbek — Frontend Developer crafting animated, interaction-heavy web experiences and AI interfaces.',
-          brandSub:'CREATIVE FRONTEND / 2026',navAbout:'ABOUT',navStack:'STACK',navWork:'WORK',navLab:'LAB',navContact:'CONTACT',
-          heroKicker:'AVAILABLE FOR AMBITIOUS BUILDS',heroRole:'FRONTEND DEVELOPER',heroRole2:'INTERACTION BUILDER',heroIntro:'I build interfaces that feel <strong>alive</strong> — motion-rich, responsive and engineered with obsessive attention to interaction, rhythm and detail.',heroCta:'EXPLORE SELECTED WORK',publicRepos:'PUBLIC REPOSITORIES',corePhilosophy:'CORE PHILOSOPHY: DETAIL',scrollDiscover:'SCROLL TO DISCOVER',
-          aboutHead:'01 / IDENTITY',aboutHead2:'NOT ANOTHER DEFAULT PORTFOLIO',aboutTitle1:'DESIGNING',aboutTitle2:'BEYOND',aboutTitle3:'DEFAULT.',developer:'DEVELOPER',online:'ONLINE',
-          aboutItem1Title:'Motion with purpose.',aboutItem1Text:'Animations are not filler. They establish hierarchy, explain state changes, direct attention and make the interface feel physical without sacrificing clarity.',aboutItem2Title:'Details are the product.',aboutItem2Text:'Cursor physics, button magnetism, timing curves, spacing, type rhythm and micro-feedback are treated as real engineering decisions — not decoration after the build.',aboutItem3Title:'Experimental, but usable.',aboutItem3Text:'I like ambitious interfaces, AI products and unusual interactions, but responsive behavior, accessibility and fallback states still come first.',
-          skillsHead:'02 / TOOLKIT',skillsHead2:'THE SYSTEM BEHIND THE SURFACE',stackWord:'STACK',capabilitiesWord:'CAPABILITIES',skillsIntro:'Modern frontend primitives, animation systems and rapid product iteration — used to ship interactive experiences instead of static mockups.',skillTechText:'React, TypeScript, Vite, CSS, Git and API-driven interfaces tied together with deliberate motion.',skillMotionText:'Transform-first motion, progressive enhancement and reduced-motion fallbacks.',skillInteractionText:'Drag the chip. Every surface should acknowledge the user, not just sit there.',dragMe:'DRAG ME ↔',
-          workHead:'03 / SELECTED BUILDS',workHead2:'REAL REPOSITORIES / LIVE GITHUB',realCode:'REAL CODE.',realBuilds:'REAL BUILDS.',workIntro:'The portfolio loads public repositories from GitHub and keeps curated fallbacks so the work section never turns into an empty template.',projectGeneric:'Public build from Temurbek’s GitHub workspace.',
-          labHead:'04 / EXPERIMENT',labHead2:'AGENT COMMAND SPACE',labTag:'✦ INTERACTIVE SYSTEM',labIntro:'A visual metaphor for the systems I like building: one core, multiple specialized tools, visible status and strong feedback loops.',
-          contactHead:'05 / CONTACT',contactHead2:'LET\'S BUILD SOMETHING THAT MOVES',haveIdea:'HAVE AN IDEA?',contactTitle1:'LET\'S MAKE IT',contactTitle2:'IMPOSSIBLE TO IGNORE.',telegramCta:'MESSAGE ON TELEGRAM',footerFocus:'FRONTEND / MOTION / INTERACTION',backTop:'BACK TO TOP ↑'
+          'nav.about':'ABOUT','nav.stack':'STACK','nav.work':'WORK','nav.lab':'LAB','nav.contact':'CONTACT',
+          'hero.available':'AVAILABLE FOR AMBITIOUS BUILDS','hero.role':'FRONTEND DEVELOPER','hero.interaction':'INTERACTION BUILDER','hero.intro':'I build interfaces that feel <strong>alive</strong> — motion-rich, responsive and engineered with obsessive attention to interaction, rhythm and detail.',
+          'hero.cta':'EXPLORE SELECTED WORK','hero.repos':'PUBLIC REPOSITORIES','hero.philosophy':'CORE PHILOSOPHY: DETAIL','hero.scroll':'SCROLL TO DISCOVER',
+          'about.kicker':'01 / IDENTITY','about.side':'NOT ANOTHER DEFAULT PORTFOLIO','about.a1.title':'Motion with purpose.','about.a1.body':'Animations are not filler. They establish hierarchy, explain state changes, direct attention and make the interface feel physical without sacrificing clarity.','about.a2.title':'Details are the product.','about.a2.body':'Cursor physics, button magnetism, timing curves, spacing, type rhythm and micro-feedback are treated as real engineering decisions — not decoration after the build.','about.a3.title':'Experimental, but usable.','about.a3.body':'I like ambitious interfaces, AI products and unusual interactions, but responsive behavior, accessibility and fallback states still come first.',
+          'skills.kicker':'02 / TOOLKIT','skills.side':'THE SYSTEM BEHIND THE SURFACE','skills.body':'Modern frontend primitives, animation systems and rapid product iteration — used to ship interactive experiences instead of static mockups.',
+          'work.kicker':'03 / SELECTED BUILDS','work.side':'REAL REPOSITORIES / LIVE GITHUB','work.body':'The portfolio loads public repositories from GitHub and keeps curated fallbacks so the work section never turns into an empty template.',
+          'lab.kicker':'04 / EXPERIMENT','lab.side':'AGENT COMMAND SPACE','lab.body':'A visual metaphor for the systems I like building: one core, multiple specialized tools, visible status and strong feedback loops.',
+          'contact.kicker':'05 / CONTACT','contact.side':"LET'S BUILD SOMETHING THAT MOVES",'contact.question':'HAVE AN IDEA?','contact.title':"LET'S MAKE IT<br><em>IMPOSSIBLE TO IGNORE.</em>",'contact.telegram':'MESSAGE ON TELEGRAM','footer.top':'BACK TO TOP ↑'
         }
       };
-      const queryLang=new URLSearchParams(location.search).get('lang');
-      let currentLang=(queryLang&&I18N[queryLang]?queryLang:null)||localStorage.getItem('tb-lang')||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':(navigator.language||'').toLowerCase().startsWith('en')?'en':'uz');
-      if(!I18N[currentLang]) currentLang='uz';
-      const t=k=>I18N[currentLang]?.[k]??I18N.en[k]??k;
-      const applyLanguage=lang=>{currentLang=I18N[lang]?lang:'uz';localStorage.setItem('tb-lang',currentLang);document.documentElement.lang=currentLang;$$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(k)el.textContent=t(k)});$$('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(k)el.innerHTML=t(k)});$$('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===currentLang));document.title=t('metaTitle');const md=document.querySelector('meta[name="description"]');if(md)md.content=t('metaDescription');document.body.classList.remove('lang-change');requestAnimationFrame(()=>{document.body.classList.add('lang-change');setTimeout(()=>document.body.classList.remove('lang-change'),420)})};
+      const applyLang=(lang)=>{lang=I18N[lang]?lang:'uz';document.documentElement.lang=lang;localStorage.setItem('tb-lang',lang);$$('[data-i18n]').forEach(el=>{const v=I18N[lang][el.dataset.i18n];if(v!=null)el.textContent=v});$$('[data-i18n-html]').forEach(el=>{const v=I18N[lang][el.dataset.i18nHtml];if(v!=null)el.innerHTML=v});$$('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));};
+      $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+      applyLang(localStorage.getItem('tb-lang')||'uz');
       const fallbacks=[
         {name:'BahramovAI',html_url:'https://github.com/temurbekbahramov45-hub/BahramovAI',description:'Cross-platform personal AI assistant with voice, vision and computer-control tooling.',language:'Python',stargazers_count:0,forks_count:0},
         {name:'Axiom-Agent',html_url:'https://github.com/temurbekbahramov45-hub/Axiom-Agent',description:'J.A.R.V.I.S.-style local agent with automation and local fallback providers.',language:'TypeScript',stargazers_count:0,forks_count:0},
@@ -264,12 +261,6 @@
         {name:'dendyfood',html_url:'https://github.com/temurbekbahramov45-hub/dendyfood',description:'A public product and delivery web experiment from the Bahramov workspace.',language:'Web',stargazers_count:0,forks_count:0}
       ];
       const priorities=['BahramovAI','Axiom-Agent','ultra-video-editor','dendyfood'];
-      const projectCopy={
-        'BahramovAI':{uz:'Ovoz, vision va kompyuterni boshqarish vositalariga ega cross-platform shaxsiy AI assistant.',ru:'Кроссплатформенный персональный AI-ассистент с голосом, vision и инструментами управления компьютером.',en:'Cross-platform personal AI assistant with voice, vision and computer-control tooling.'},
-        'Axiom-Agent':{uz:'Automation va local fallback providerlarga ega J.A.R.V.I.S.-uslubidagi lokal agent.',ru:'Локальный агент в стиле J.A.R.V.I.S. с автоматизацией и локальными fallback-провайдерами.',en:'J.A.R.V.I.S.-style local agent with automation and local fallback providers.'},
-        'ultra-video-editor':{uz:'Ultra Video Editor / NCHUST1 uchun kreativ tooling va public web tajribasi.',ru:'Креативные инструменты и публичный web-опыт для Ultra Video Editor / NCHUST1.',en:'Creative tooling and public web experience for Ultra Video Editor / NCHUST1.'},
-        'dendyfood':{uz:'Bahramov workspace’dan product va delivery yo‘nalishidagi public web tajriba.',ru:'Публичный продуктовый и delivery web-эксперимент из рабочего пространства Bahramov.',en:'A public product and delivery web experiment from the Bahramov workspace.'}
-      };
       const junk=/^(test|aaaa|ssfsf|3tryy|webbsite|website|newdb|withdb|dbsite)$/i;
 
       // loader
@@ -315,10 +306,9 @@
         'ultra-video-editor':['03','CREATIVE TOOLING / WEB'],
         'dendyfood':['04','PRODUCT EXPERIMENT / WEB']
       };
-      const card=(r,i)=>{const n=note[r.name]||[String(i+1).padStart(2,'0'),'GITHUB BUILD'];const desc=projectCopy[r.name]?.[currentLang]||r.description||t('projectGeneric');return `<article class="project reveal" data-cursor="VIEW"><a class="project-link" href="${r.homepage||r.html_url}" target="_blank" rel="noreferrer"><div class="project-top"><span>${n[0]}</span><span>${n[1]}</span><span>↗</span></div><div class="visual"><div class="visual-grid"></div><div class="visual-glow"></div><div class="visual-ring"></div><div class="visual-ring r2"></div><div class="scan"></div><div class="project-logo">${r.name.slice(0,2).toUpperCase()}</div></div><div class="project-copy"><h3>${r.name}</h3><p>${desc}</p><div class="meta"><span><i></i>${r.language||'Web'}</span><span>★ ${r.stargazers_count||0}</span><span>⑂ ${r.forks_count||0}</span></div></div></a></article>`};
-      let currentRepos=fallbacks;const render=repos=>{currentRepos=repos;const strip=$('#workStrip');strip.innerHTML=repos.slice(0,8).map(card).join('');strip.querySelectorAll('.project').forEach(el=>io.observe(el));strip.querySelectorAll('[data-cursor]').forEach(()=>{});};
-      applyLanguage(currentLang);$$('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>{applyLanguage(btn.dataset.lang);render(currentRepos)}));
-      render(currentRepos);
+      const card=(r,i)=>{const n=note[r.name]||[String(i+1).padStart(2,'0'),'GITHUB BUILD'];const desc=r.description||'Public build from Temurbek’s GitHub workspace.';return `<article class="project reveal" data-cursor="VIEW"><a class="project-link" href="${r.homepage||r.html_url}" target="_blank" rel="noreferrer"><div class="project-top"><span>${n[0]}</span><span>${n[1]}</span><span>↗</span></div><div class="visual"><div class="visual-grid"></div><div class="visual-glow"></div><div class="visual-ring"></div><div class="visual-ring r2"></div><div class="scan"></div><div class="project-logo">${r.name.slice(0,2).toUpperCase()}</div></div><div class="project-copy"><h3>${r.name}</h3><p>${desc}</p><div class="meta"><span><i></i>${r.language||'Web'}</span><span>★ ${r.stargazers_count||0}</span><span>⑂ ${r.forks_count||0}</span></div></div></a></article>`};
+      const render=repos=>{const strip=$('#workStrip');strip.innerHTML=repos.slice(0,8).map(card).join('');strip.querySelectorAll('.project').forEach(el=>io.observe(el));strip.querySelectorAll('[data-cursor]').forEach(()=>{});};
+      render(fallbacks);
       fetch(`https://api.github.com/users/${GITHUB}/repos?per_page=100&sort=updated`).then(r=>r.ok?r.json():Promise.reject()).then(data=>{const clean=data.filter(r=>!r.fork&&!junk.test(r.name));clean.sort((a,b)=>{const ai=priorities.indexOf(a.name),bi=priorities.indexOf(b.name);if(ai>=0||bi>=0){if(ai<0)return 1;if(bi<0)return -1;return ai-bi}return new Date(b.updated_at)-new Date(a.updated_at)});const merged=[...fallbacks];clean.forEach(r=>{const idx=merged.findIndex(x=>x.name===r.name);idx>=0?merged[idx]={...merged[idx],...r}:merged.push(r)});render(merged);$('#repoCount').textContent=data.filter(r=>!r.fork).length+'+'}).catch(()=>{});
 
       // horizontal project navigation
